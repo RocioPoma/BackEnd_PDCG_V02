@@ -5,9 +5,9 @@ const server = express(); */
 const app = require('./index');
 const server =http.createServer(app);
 
-// server.listen(80, () => {
-//   console.log("FUNCIONA")
-// }) ;
+server.listen(80, () => {
+  console.log("FUNCIONA")
+}) ;
 
 
 //LOCALHOST
