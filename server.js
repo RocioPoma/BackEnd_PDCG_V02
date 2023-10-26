@@ -10,7 +10,7 @@ server.listen(80, () => {
 }) ;
 
 
-//LOCAL HOST
+//LOCALHOST
 // server.listen(4000,()=>{
 //   console.log('FUNCIONA');
 // })
