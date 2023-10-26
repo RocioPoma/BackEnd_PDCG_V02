@@ -32,6 +32,25 @@ router.get('/get', (req, res) => {
         });
 });
 
+//Listar ciudad_comunidad activos
+router.get('/get_activo', (req, res) => {
+    connection.query(`
+    SELECT cc.*, m.nombre_municipio 
+    FROM ciudad_o_comunidad cc 
+    JOIN municipio m ON cc.id_municipio = m.id_municipio
+    WHERE estado='true'
+    ORDER BY cc.nombre ASC;
+     `,
+        (err, results) => {
+            if (err) {
+                console.error(err);
+                res.status(500).json({ message: 'Hubo un error al obtener CIUDAD_O_COMUNIDAD' });
+            } else {
+                res.json(results);
+            }
+        });
+});
+
 //obtener ciudad_comunidad por id de municipio
 router.get('/getByIdMunicipio/:id_municipio', (req, res) => {
     const id_municipio = req.params.id_municipio;
