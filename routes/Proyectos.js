@@ -216,7 +216,8 @@ router.post('/add', multer.single('documento'), (req, res) => {
       id_accion_estrategica: proyecto.id_accion_estrategica,
       estado: proyecto.estado,
       documento: '',
-      estado: 'true'
+      estado: 'true',
+      ci:proyecto.ci,
     }
   } else {
     console.log('Con a  rchivo')
@@ -235,7 +236,8 @@ router.post('/add', multer.single('documento'), (req, res) => {
       id_accion_estrategica: proyecto.id_accion_estrategica,
       estado: proyecto.estado,
       documento: req.file.filename,
-      estado: 'true'
+      estado: 'true',
+      ci:proyecto.ci,
     }
   }
 
