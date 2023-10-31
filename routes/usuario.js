@@ -54,7 +54,6 @@ connection.query('SELECT * FROM usuario WHERE email = ?', [email], (err, results
             return res.status(400).json({ message: "El número de cédula ya está en uso." });
           } else {
             // El email y el ci son únicos, procede con la inserción.
-            // ... Tu código de inserción aquí ...
             //------------------------------------------------------------------------------------------------
             connection.query('INSERT INTO usuario (ci, nombre, ap_paterno, ap_materno, password, email, telefono, genero, rol, estado, id_entidad_ejecutora,celular,fecha_registro) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [ci, nombre, ap_paterno, ap_materno, password, email, telefono, genero, rol, estado,id_entidad_ejecutora,celular,fecha_registro ], (err, results) => {
               if (!err) {
@@ -152,7 +151,7 @@ router.post('/login',(req,res)=>{
                 //GUARDAMOS CIFRADO LA CONTRASENA
                 const data = { nombre: results[0].nombre, estado: results[0].estado,rol: results[0].rol,ap_paterno: results[0].ap_paterno,ap_materno: results[0].ap_materno,ci: results[0].ci };               
                 const response ={ email: results[0].email, rol: results[0].rol}
-                const accessToken = jwt.sign(response,'qwertyToken',{ expiresIn: '8h'})
+                const accessToken = jwt.sign(response,'qwertyToken',{ expiresIn: '48h'})
                 res.status(200).json({ token: accessToken, data:data});
             }
             else{
