@@ -17,7 +17,7 @@ var connection = mysql.createConnection({
 
     // LOCAL
     // port: 3306, 
-    // host:'localhost',
+    // host: 'localhost',
     // user: 'root',
     // password: '',
     // database: 'bdd_proyectos_v05'
