@@ -10,7 +10,7 @@ const pool = mysql.createPool({
     host: 'cln5c4yri00q6pmcg18ba0o41',
     user: 'cln5c4yrh0cjzcgpm4icih9ri',
     password: 'c3oLwWprrgZlX1U7nkdv6ZIC',
-    database: 'bdd_proyectos_v05',
+    database: 'bdd_proyectos_v02',
 });
 
 // Obtener una conexión del pool y realizar operaciones
