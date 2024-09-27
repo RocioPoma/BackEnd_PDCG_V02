@@ -5,6 +5,7 @@ const server = express(); */
 const app = require('./index');
 const server = http.createServer(app);
 
+// SERVER
 server.listen(80, () => {
   console.log("FUNCIONA")
 });
